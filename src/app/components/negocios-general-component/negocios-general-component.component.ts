@@ -7,10 +7,11 @@ interface Negocio {
   nombre: string;
   direccion: string;
   imagenes: Imgenes;
-  urlMaps: string;
+  urlWebApp: string;
   horariosLocal: HorariosLocal;
   tipoNegocioID: number;
   tipoNegocio: string;
+  NDescripcion: string;
   notas: string;
 }
 
@@ -25,14 +26,19 @@ interface HorariosLocal {
 }
 
 interface Imgenes {
-
+  i1: any,
+  i2: any,
+  i3: any,
+  i4: any
 }
+
 
 @Component({
   selector: 'app-negocios-general-component',
   templateUrl: './negocios-general-component.component.html',
   styleUrls: ['./negocios-general-component.component.css']
 })
+
 export class NegociosGeneralComponentComponent {
   infoNegocios_json: any = JSON_DNegocio;
 
@@ -41,9 +47,12 @@ export class NegociosGeneralComponentComponent {
     nombre: '',
     direccion: '',
     imagenes: {
-      urlImg: '',
+      i1: '',
+      i2: '',
+      i3: '',
+      i4: ''
     },
-    urlMaps: '',
+    urlWebApp: '',
     horariosLocal: {
       Lunes: '',
       Martes: '',
@@ -55,11 +64,13 @@ export class NegociosGeneralComponentComponent {
     },
     tipoNegocioID: 0,
     tipoNegocio: '',
+    NDescripcion: '',
     notas: '',
   }
 
-  ed(d : Negocio){
+  ed(d: Negocio) {
     this.item = d;
+    // console.log(d.horariosLocal);
     // console.log(this.infoNegocios_json.imagenes)
-  } 
+  }
 }

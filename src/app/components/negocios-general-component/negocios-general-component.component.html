@@ -5,6 +5,8 @@
       <div class="section-header">
          <h2>Negocios</h2>
          <p>*que se encuentra en esta sección*</p>
+         <span class="badge bg-warning"><i class="bi bi-exclamation-triangle-fill"></i>En caso de no funcionar el
+            filtro, refrescar(F5)</span>
       </div>
 
       <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
@@ -23,25 +25,27 @@
          <div class="row gy-4 portfolio-container">
             <!-- Portfolio Item -->
             <div *ngFor="let item of infoNegocios_json"
-               class="col-xl-4 col-md-6 portfolio-item filter-{{ item.tipoNegocioID}}">
+               class="col-xl-3 col-md-6 portfolio-item filter-{{ item.tipoNegocioID}}">
                <div class="portfolio-wrap">
-                  <a  data-gallery="portfolio-gallery-app"><img src="{{ item.imagenes[0] }}" class="img-fluid"
-                        alt=""></a>
+                  <a (click)="ed(item)" href="#inn" data-gallery="portfolio-gallery-app"><img
+                        src="{{ item.imagenes[0] }}" class="img-fluid" alt=""></a>
                   <div class="portfolio-info">
-                     <h4><a (click)="ed(item)" >{{
+                     <h4><a (click)="ed(item)">{{
                            item.nombre }}</a></h4>
                      <span class="badge bg-danger text-white">{{ item.tipoNegocio }}</span>
-                     <h4 *ngIf="item.notas != ''" class="mt-2"><span class="badge bg-warning"><i
-                              class="bi bi-exclamation-triangle-fill"></i> {{ item.notas }}</span></h4>
+                     <!-- <h4 *ngIf="item.notas != ''" class="mt-2"><span class="badge bg-warning"><i
+                              class="bi bi-exclamation-triangle-fill"></i> {{ item.notas }}</span></h4> -->
                   </div>
                </div>
             </div>
             <!-- End Portfolio Item -->
          </div>
 
-         <div class="row gy-4 portfolio-container">
-            <app-negocio-especifico-component [dataEnviada]="item"></app-negocio-especifico-component>
-         </div>
+         <section id="inn" class="mt-5 pt-5">
+            <div class="row gy-4 portfolio-container">
+               <app-negocio-especifico-component [dataEnviada]="item"></app-negocio-especifico-component>
+            </div>
+         </section>
 
       </div>
    </div>

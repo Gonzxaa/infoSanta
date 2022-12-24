@@ -8,6 +8,7 @@ import { NavComponentComponent } from './components/nav-component/nav-component.
 import { NegocioEspecificoComponentComponent } from './components/negocio-especifico-component/negocio-especifico-component.component';
 import { NegociosGeneralComponentComponent } from './components/negocios-general-component/negocios-general-component.component';
 import { WebInConstruComponentComponent } from './components/web-in-constru-component/web-in-constru-component.component';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { WebInConstruComponentComponent } from './components/web-in-constru-comp
     HomeComponentComponent,
     NegocioEspecificoComponentComponent,
     NegociosGeneralComponentComponent,
-    WebInConstruComponentComponent
+    WebInConstruComponentComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

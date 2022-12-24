@@ -5,10 +5,11 @@ interface Negocio {
   nombre: string;
   direccion: string;
   imagenes: Imgenes;
-  urlMaps: string;
+  urlWebApp: string;
   horariosLocal: HorariosLocal;
   tipoNegocioID: number;
   tipoNegocio: string;
+  NDescripcion: string;
   notas: string;
 }
 
@@ -23,6 +24,10 @@ interface HorariosLocal {
 }
 
 interface Imgenes {
+  i1: any,
+  i2: any,
+  i3: any,
+  i4: any
 }
 
 @Component({
